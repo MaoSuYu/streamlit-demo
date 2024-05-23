@@ -10,23 +10,12 @@ st.set_page_config(page_title="Chat with LLM", page_icon=":smiley:", layout="wid
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# st.set_page_config(page_title="Chat with LLM", page_icon=":smiley:", layout="wide")
-# show_pages(
-#     [
-#         Page(path="chat_start.py", name="聊天", icon=":books:"),
-#         Page(path="other_pages/setting.py", name="设置", icon=":books:"),
-#     ]
-# )
-
-# 加载侧边栏
-# sidebar.sidebar()
-
 # 显示聊天记录
 for item in st.session_state.messages:
     st.chat_message(item["name"]).write(item["message"])
 
 # 底部输入框
-prompt = st.chat_input(placeholder="Type a message...", disabled=False)
+prompt = st.chat_input(placeholder="说点什么吧...", disabled=False)
 
 # 如果有输入，将输入添加到聊天记录中
 if prompt:
