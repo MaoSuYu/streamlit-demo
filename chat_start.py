@@ -1,7 +1,8 @@
 import streamlit as st
 from openai import OpenAI
 
-client = OpenAI(api_key="sk-proj-y9BvD2Tknql4ZqNZUxBcT3BlbkFJxLJtCohiHh2CHS1DWeD7", base_url="https://openai.maosuyu.com/v1")
+openai_key = st.secrets["openai_key"]
+client = OpenAI(api_key=openai_key, base_url="https://openai.maosuyu.com/v1")
 
 st.set_page_config(page_title="Chat with LLM", page_icon=":smiley:", layout="wide")
 
